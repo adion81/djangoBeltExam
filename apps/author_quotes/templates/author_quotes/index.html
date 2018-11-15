@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'author_quotes/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <main>
+        <h1>Welcome to Quotes!</h1>
+        <p>Please register if you do not have an account already.</p>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form class="col-4 form-group" id="register" action="/register" method="POST">
+            {% csrf_token %}
+            <label for="first_name">First Name: </label>
+            <input class="form-control form-control-md" type="text" name="first_name" placeholder="First Name">
+            <label for="last_name">Last Name: </label>
+            <input class="form-control form-control-md" type="text" name="last_name" placeholder="Last Name">
+            <label for="email">Email: </label>
+            <input class="form-control form-control-md" type="email" name="email" placeholder="Email">
+            <label for="password">Password: </label>
+            <input class="form-control form-control-md" type="password" name="password" placeholder="make it clean and at least 8">
+            <label for="confpw">Confirm Password: </label>
+            <input class="form-control form-control-md" type="password" name="confpw" placeholder="make it the same"><br>
+            <input class="submit" type="submit" value="Create New User">
+        </form>
+        <form class="col-4 form-group"id="login" action='/login' method="POST">
+            {% csrf_token %}
+            <label for="login_email">Email: </label>
+            <input class="form-control form-control-sm" type="email" name="login_email" placeholder="your email address">
+            <label for="login_password">Password:</label>
+            <input class="form-control form-control-sm" type="password" name="login_password" placeholder="your password">
+            <input class="submit" type="submit" value="Log In">
+        </form>
+    </main>
+
+</body>
+
+</html>

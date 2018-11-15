@@ -1,0 +1,66 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    vertical-align: top;
+}
+h1{
+    font-size: 400%;
+    width: 40%;
+    display: inline-block;
+    margin: 1% 10% 1% 5%;
+}
+header a{
+    font-size: 150%;
+    width: 20%;
+    display: inline-block;
+    margin: 1% 0 5% 1%;
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+form{
+    border: 5px solid black;
+    padding: 2%;
+    display: inline-block;
+}
+input.submit{
+    margin: 1%;
+    padding: 1%;
+    background-color: blue;
+    color: white;
+}
+div.quotes{
+    display: inline-block;
+}
+form#create_quote{
+    border: none;
+    display: inline-block;
+}
+p#author{
+    font-weight: bold;
+    font-size: 150%;
+}
+div.postQuote{
+    border: 1px solid black;
+    margin-bottom: 1%;
+}
+div.create_quote{
+    display: inline-block;
+    margin-left: 7%;
+}
+h3{
+    font-size:200%;
+    font-weight: bold;
+}
+form#like{
+    border: none;
+}
+input#like{
+    background-color: green;
+    color: white;
+    border: 1px solid black;
+}
+a#delete{
+    margin-left: 70%;
+    font-size: 120%;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Posted Quotes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'author_quotes/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <header>
+        <h1>{{ this_user.first_name }} {{ this_user.last_name }} Quotes</h1>
+        <a href="/quotes">Go Back</a>
+        <a href='/logout'>Log Out</a>
+    </header>
+    <main>
+            <div class="quotes col-6">
+                    {% for quote in postQuote %}
+                        {% if quote.posted_by == this_user.first_name %}
+                            <div class="postQuote col-6">
+                                <p id="author">{{ quote.author }}</p>
+                                <p>"{{ quote.quote }}"</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+        
+    </main>
+
+</body>
+
+</html>
